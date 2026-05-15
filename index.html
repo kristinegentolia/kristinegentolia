@@ -6,6 +6,8 @@
 <title>Kristine Gentolia — Executive Virtual Assistant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 
 /* ═══════════════════════════════════════════
@@ -15,7 +17,8 @@
   --parchment: #f8f5f0;
   --cream:     #fdfcfa;
   --ink:       #1e1c1a;
-  --stone:     #8a8278;
+  --stone:     #4a4642;      /* ← darkened from #8a8278 for legibility */
+  --stone-mid: #6b6460;      /* ← mid-tone for secondary labels */
   --rust:      #a0522d;
   --rust2:     #7a3d1e;
   --rust-soft: rgba(160,82,45,0.07);
@@ -119,7 +122,7 @@ body::after {
   font-family: 'Space Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.08em;
-  color: var(--stone);
+  color: var(--stone-mid);
   text-decoration: none;
   cursor: none;
   transition: color 0.25s;
@@ -184,17 +187,17 @@ body::after {
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-mid);
 }
 .hero-strip-index {
   font-family: 'Space Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: var(--stone);
+  color: var(--stone-mid);
 }
 .hero-strip-index span { color: var(--rust); }
 
-/* ── HERO BODY: two-column grid, text left / visual right ── */
+/* ── HERO BODY ── */
 .hero-body {
   flex: 1;
   display: grid;
@@ -207,7 +210,6 @@ body::after {
   position: relative;
 }
 
-/* LEFT: name + tagline */
 .hero-name-col {
   display: flex;
   flex-direction: column;
@@ -294,7 +296,6 @@ h1.name-display {
 }
 .btn-wire:hover { border-color: var(--rust); color: var(--rust); transform: translateY(-2px); }
 
-/* ── RIGHT: Visual column — mirrors reference hero-visual ── */
 .hero-photo-col {
   display: flex;
   justify-content: center;
@@ -304,14 +305,11 @@ h1.name-display {
   animation: fadeIn 1.2s 0.7s forwards;
 }
 
-/* img-wrap: fixed size, matches reference hero-img-wrap */
 .hero-img-wrap {
   position: relative;
   width: 380px;
   height: 500px;
 }
-
-/* decorative border offset — matches reference ::before */
 .hero-img-wrap::before {
   content: '';
   position: absolute;
@@ -333,8 +331,6 @@ h1.name-display {
   position: relative;
   z-index: 1;
 }
-
-/* bottom gradient fade on photo */
 .photo-overlay {
   position: absolute;
   inset: 0;
@@ -342,8 +338,6 @@ h1.name-display {
   background: linear-gradient(to bottom, transparent 65%, var(--cream) 100%);
   pointer-events: none;
 }
-
-/* Name tag at bottom of wrap */
 .photo-nametag {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -363,11 +357,10 @@ h1.name-display {
   font-size: 8px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 0.85;
   margin-top: 3px;
 }
 
-/* Fallback placeholder */
 .photo-ph {
   width: 100%; height: 100%;
   min-height: 400px;
@@ -389,7 +382,6 @@ h1.name-display {
   line-height: 2;
 }
 
-/* STATS BAR — below hero body */
 .hero-stats-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -418,7 +410,7 @@ h1.name-display {
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-mid);
   line-height: 1.7;
 }
 
@@ -443,7 +435,7 @@ h1.name-display {
   font-size: 8.5px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-mid);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
@@ -532,7 +524,7 @@ h1.name-display {
   font-family: 'Space Mono', monospace;
   font-size: 9px;
   letter-spacing: 0.1em;
-  color: var(--stone);
+  color: var(--stone-mid);
   margin-top: 3px;
 }
 .skill-table {
@@ -548,9 +540,10 @@ h1.name-display {
   font-family: 'Space Mono', monospace;
   font-size: 9.5px;
   letter-spacing: 0.06em;
-  color: var(--stone);
+  color: var(--ink);
   display: flex;
   align-items: center;
+  font-weight: 500 !important;
   gap: 9px;
   cursor: none;
   transition: background 0.25s, color 0.25s;
@@ -578,9 +571,9 @@ h1.name-display {
 }
 .svc-intro-sub {
   font-size: 13.5px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.9;
-  color: var(--stone);
+  color: var(--ink);
   max-width: 280px;
 }
 .svc-table {
@@ -629,9 +622,9 @@ h1.name-display {
 }
 .svc-desc {
   font-size: 12.5px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.9;
-  color: var(--stone);
+  color: var(--ink);
 }
 
 /* ═══════════════════════════════════════════
@@ -650,7 +643,7 @@ h1.name-display {
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-mid);
 }
 .exp-entry {
   display: grid;
@@ -692,9 +685,9 @@ h1.name-display {
 .exp-pts { list-style: none; }
 .exp-pts li {
   font-size: 12.5px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.85;
-  color: var(--stone);
+  color: var(--ink);
   padding-left: 18px;
   position: relative;
   margin-bottom: 2px;
@@ -719,12 +712,12 @@ h1.name-display {
   font-family: 'Space Mono', monospace;
   font-size: 8.5px;
   letter-spacing: 0.08em;
-  color: var(--stone);
+  color: var(--ink);
   white-space: nowrap;
 }
 
 /* ═══════════════════════════════════════════
-   TOOLS
+   TOOLS — Icon grid
 ═══════════════════════════════════════════ */
 .tools-grid {
   display: grid;
@@ -736,19 +729,37 @@ h1.name-display {
 }
 .tool-cell {
   background: var(--cream);
-  padding: 22px 18px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 13px;
-  font-weight: 400;
+  padding: 28px 18px 24px;
   color: var(--stone);
   text-align: center;
   cursor: none;
   transition: background 0.25s, color 0.25s;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 .tool-cell:hover { background: var(--rust-soft); color: var(--rust); }
+.tool-cell i {
+  font-size: 26px;
+  color: var(--rust);
+  opacity: 0.7;
+  transition: opacity 0.25s, transform 0.3s ease;
+  display: block;
+}
+.tool-cell:hover i { opacity: 1; transform: translateY(-2px); }
+.tool-cell span {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stone);
+  transition: color 0.25s;
+  line-height: 1.4;
+}
+.tool-cell:hover span { color: var(--rust); }
+
 .skills-strip {
   display: flex;
   flex-wrap: wrap;
@@ -800,7 +811,7 @@ h1.name-display {
   font-size: 9px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-mid);
 }
 .ctc-val {
   font-family: 'Fraunces', serif;
@@ -813,24 +824,36 @@ h1.name-display {
   line-height: 1.2;
 }
 .ctc-val:hover { color: var(--rust); }
+
+/* ── Send a Message — big prominent button ── */
 .ctc-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
   margin-top: 36px;
-  padding: 16px 36px;
+  padding: 20px 48px;
   background: var(--rust);
   color: var(--cream);
   font-family: 'Space Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
   cursor: none;
-  transition: background 0.3s, transform 0.2s;
+  border: 2px solid var(--rust);
+  box-shadow: 4px 4px 0px var(--rust2);
+  transition: background 0.25s, transform 0.2s, box-shadow 0.2s, border-color 0.25s;
+  width: 100%;
+  max-width: 380px;
 }
-.ctc-btn:hover { background: var(--rust2); transform: translateY(-2px); }
-.ctc-btn svg { transition: transform 0.3s; }
+.ctc-btn:hover {
+  background: var(--rust2);
+  border-color: var(--rust2);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #5a2d10;
+}
+.ctc-btn svg { transition: transform 0.3s; flex-shrink: 0; }
 .ctc-btn:hover svg { transform: translateX(5px); }
 
 /* ═══════════════════════════════════════════
@@ -867,14 +890,12 @@ footer p {
   font-family: 'Space Mono', monospace;
   font-size: 9px;
   letter-spacing: 0.1em;
-  color: var(--stone);
+  color: var(--stone-mid);
 }
 
 /* ═══════════════════════════════════════════
    RECOMMENDATIONS
 ═══════════════════════════════════════════ */
-#recommendations .section-inner {}
-
 .rec-intro {
   display: flex;
   justify-content: space-between;
@@ -889,7 +910,6 @@ footer p {
   color: var(--stone);
   max-width: 300px;
 }
-
 .rec-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -897,7 +917,6 @@ footer p {
   background: var(--rule);
   border: 1px solid var(--rule);
 }
-
 .rec-card {
   background: var(--cream);
   padding: 44px 40px 40px;
@@ -916,8 +935,6 @@ footer p {
 }
 .rec-card:hover { background: var(--rust-soft); }
 .rec-card:hover::before { height: 100%; }
-
-/* Open-quote decorative mark */
 .rec-quote-mark {
   font-family: 'Fraunces', serif;
   font-size: 80px;
@@ -929,37 +946,27 @@ footer p {
   display: block;
   user-select: none;
 }
-
-/* Star rating */
 .rec-stars {
   display: flex;
   gap: 3px;
   margin-bottom: 20px;
 }
-.rec-star {
-  color: #c9a227;
-  font-size: 16px;
-}
-
+.rec-star { color: #c9a227; font-size: 16px; }
 .rec-text {
   font-family: 'Fraunces', serif;
   font-style: italic;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.85;
   color: var(--ink);
   margin-bottom: 32px;
 }
-
-/* Divider */
 .rec-divider {
-  width: 32px;
-  height: 1px;
+  width: 32px; height: 1px;
   background: var(--rust);
   opacity: 0.4;
   margin-bottom: 24px;
 }
-
 .rec-author {
   display: flex;
   align-items: center;
@@ -976,11 +983,7 @@ footer p {
   flex-shrink: 0;
   overflow: hidden;
 }
-.rec-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.rec-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .rec-avatar-initials {
   font-family: 'Fraunces', serif;
   font-size: 15px;
@@ -988,7 +991,6 @@ footer p {
   font-style: italic;
   color: var(--rust);
 }
-.rec-author-info {}
 .rec-name {
   font-family: 'Space Mono', monospace;
   font-size: 10px;
@@ -1001,7 +1003,7 @@ footer p {
   font-size: 8.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-mid);
 }
 .rec-company-badge {
   margin-left: auto;
@@ -1014,7 +1016,6 @@ footer p {
   padding: 4px 10px;
   white-space: nowrap;
 }
-
 
 @keyframes fadeIn   { from{opacity:0} to{opacity:1} }
 @keyframes fadeDown { from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
@@ -1070,11 +1071,7 @@ footer p {
   transform: translateY(-12px);
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
-#mobile-menu.open {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-}
+#mobile-menu.open { display: flex; opacity: 1; transform: translateY(0); }
 .mm-nav {
   list-style: none;
   display: flex;
@@ -1103,7 +1100,7 @@ footer p {
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--stone-mid);
 }
 .mm-nav a:hover { color: var(--rust); padding-left: 40px; }
 .mm-nav a:hover span { color: var(--rust); }
@@ -1128,18 +1125,15 @@ footer p {
   body { cursor: auto; }
   #xhair { display: none; }
 
-  /* Topbar */
   #topbar { grid-template-columns: 1fr auto; padding: 0 24px; }
   .tb-nav { display: none; }
   .avail-badge { display: none; }
   .hamburger { display: flex; }
 
-  /* Hero strip */
   .hero-strip { padding: 14px 24px; }
   .hero-strip-tag { font-size: 8.5px; letter-spacing: 0.1em; }
   .hero-strip-index { font-size: 8.5px; }
 
-  /* Hero body — single column, name on top, photo below */
   .hero-body {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
@@ -1148,57 +1142,23 @@ footer p {
     min-height: auto;
     align-items: start;
   }
-
-  /* Name column — full width */
-  .hero-name-col {
-    width: 100%;
-    order: 1;
-  }
-
-  /* Name sizes on mobile */
-  .nd-first, .nd-last {
-    font-size: clamp(52px, 14vw, 96px);
-  }
-
+  .hero-name-col { width: 100%; order: 1; }
+  .nd-first, .nd-last { font-size: clamp(52px, 14vw, 96px); }
   .hero-tagline { font-size: 13px; max-width: 100%; }
   .hero-tagline-row { margin-top: 24px; }
   .hero-ctas { margin-top: 24px; flex-wrap: wrap; }
   .btn-fill, .btn-wire { cursor: pointer; padding: 12px 24px; }
-
-  /* Photo column — full width card below name */
-  .hero-photo-col {
-    order: 2;
-    width: 100%;
-    justify-content: center;
-    padding: 0;
-  }
-
-  /* img-wrap — full width with fixed aspect ratio */
-  .hero-img-wrap {
-    width: 100%;
-    height: 420px;
-    max-width: 100%;
-  }
+  .hero-photo-col { order: 2; width: 100%; justify-content: center; padding: 0; }
+  .hero-img-wrap { width: 100%; height: 420px; max-width: 100%; }
   .hero-img-wrap::before { display: none; }
-
-  /* Make sure photo fills properly */
-  .photo-portrait {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 15%;
-  }
-
-  /* Remove cream gradient on mobile so photo isn't faded */
+  .photo-portrait { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
   .photo-overlay { display: none; }
 
-  /* Stats bar — 2×2 grid */
   .hero-stats-bar { grid-template-columns: repeat(2, 1fr); }
   .hstat { padding: 20px 24px; }
   .hstat:nth-child(2) { border-right: none; }
   .hstat-val { font-size: 34px; }
 
-  /* Sections */
   .section-outer { grid-template-columns: 1fr; }
   .section-sidelabel { display: none; }
   .section-inner { padding: var(--section) var(--gutter); }
@@ -1218,6 +1178,7 @@ footer p {
   .rec-card { padding: 28px 24px; }
   #contact .section-inner { grid-template-columns: 1fr; gap: 40px; }
   .ctc-headline { font-size: clamp(44px, 12vw, 72px); }
+  .ctc-btn { max-width: 100%; padding: 18px 32px; }
   footer { grid-template-columns: 1fr; }
   .ft-side { display: none; }
   .ft-inner { flex-direction: column; gap: 8px; text-align: center; padding: 24px; }
@@ -1239,11 +1200,18 @@ footer p {
   .svc-name { font-size: 18px; }
   .exp-title { font-size: 18px; }
   .cert-n { font-size: 14px; }
-  .tool-cell { padding: 16px 12px; font-size: 11px; }
+  .tool-cell { padding: 20px 10px 18px; }
+  .tool-cell i { font-size: 22px; }
+  .tool-cell span { font-size: 8px; }
   .rec-text { font-size: 14px; }
   .ctc-val { font-size: 15px; }
   .ctc-row { grid-template-columns: 80px 1fr; }
   .mm-nav a { font-size: 22px; padding: 18px 24px; }
+}
+.ctc-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
 }
 </style>
 </head>
@@ -1302,15 +1270,11 @@ footer p {
 
 <!-- HERO -->
 <section id="hero">
-
   <div class="hero-strip">
     <span class="hero-strip-tag">Executive Virtual Assistant · Philippines</span>
     <span class="hero-strip-index">Portfolio <span>2025</span></span>
   </div>
-
   <div class="hero-body">
-
-    <!-- LEFT: Big name + tagline -->
     <div class="hero-name-col">
       <div>
         <h1 class="name-display">
@@ -1330,8 +1294,6 @@ footer p {
         </div>
       </div>
     </div>
-
-    <!-- RIGHT: Visual — mirrors reference hero-visual -->
     <div class="hero-photo-col">
       <div class="hero-img-wrap">
         <img class="photo-portrait" src="assets/images/me.jpeg" alt="Kristine Gentolia">
@@ -1342,10 +1304,7 @@ footer p {
         </div>
       </div>
     </div>
-
   </div>
-
-  <!-- STATS BAR -->
   <div class="hero-stats-bar">
     <div class="hstat">
       <div>
@@ -1372,7 +1331,6 @@ footer p {
       </div>
     </div>
   </div>
-
 </section>
 
 <!-- ABOUT -->
@@ -1448,7 +1406,7 @@ footer p {
       <div class="svc-cell rv">
         <div class="svc-idx">01</div>
         <div class="svc-name">Executive<br>Assistance</div>
-        <p class="svc-desc">Calendar management, travel coordination, inbox zero, meeting prep — handled with full discretion and care.</p>
+        <p class="svc-desc">Calendar management, travel coordination, inbox zero, meeting prep handled with full discretion and care.</p>
       </div>
       <div class="svc-cell rv d1">
         <div class="svc-idx">02</div>
@@ -1468,7 +1426,7 @@ footer p {
       <div class="svc-cell rv d4">
         <div class="svc-idx">05</div>
         <div class="svc-name">Healthcare<br>Administration</div>
-        <p class="svc-desc">Insurance verification, prior authorizations, compliance documentation — reducing claim denials by 30%.</p>
+        <p class="svc-desc">Insurance verification, prior authorizations, compliance documentation reducing claim denials by 30%.</p>
       </div>
       <div class="svc-cell rv d4">
         <div class="svc-idx">06</div>
@@ -1611,18 +1569,62 @@ footer p {
       <div class="sec-tag">Tech Stack</div>
       <h2 class="sec-title">Tools I <em>command.</em></h2>
     </div>
+
+    <!-- Icon grid — Font Awesome icons -->
     <div class="tools-grid rv d1">
-      <div class="tool-cell">Salesforce</div>
-      <div class="tool-cell">Zoho CRM</div>
-      <div class="tool-cell">Go High Level</div>
-      <div class="tool-cell">Google Workspace</div>
-      <div class="tool-cell">Microsoft Office</div>
-      <div class="tool-cell">Calendly</div>
-      <div class="tool-cell">Slack</div>
-      <div class="tool-cell">Zoom</div>
-      <div class="tool-cell">Canva</div>
-      <div class="tool-cell">Upbase</div>
+
+      <div class="tool-cell">
+        <i class="fa-brands fa-salesforce"></i>
+        <span>Salesforce</span>
+      </div>
+
+      <div class="tool-cell">
+        <i class="fa-solid fa-database"></i>
+        <span>Zoho CRM</span>
+      </div>
+
+      <div class="tool-cell">
+        <i class="fa-solid fa-rocket"></i>
+        <span>Go High Level</span>
+      </div>
+
+      <div class="tool-cell">
+        <i class="fa-brands fa-google"></i>
+        <span>Google Workspace</span>
+      </div>
+
+      <div class="tool-cell">
+        <i class="fa-brands fa-microsoft"></i>
+        <span>Microsoft Office</span>
+      </div>
+
+      <div class="tool-cell">
+        <i class="fa-regular fa-calendar-check"></i>
+        <span>Calendly</span>
+      </div>
+
+      <div class="tool-cell">
+        <i class="fa-brands fa-slack"></i>
+        <span>Slack</span>
+      </div>
+
+      <div class="tool-cell">
+        <i class="fa-solid fa-video"></i>
+        <span>Zoom</span>
+      </div>
+
+      <div class="tool-cell">
+        <i class="fa-solid fa-palette"></i>
+        <span>Canva</span>
+      </div>
+
+      <div class="tool-cell">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Upbase</span>
+      </div>
+
     </div>
+
     <div class="skills-strip rv d2">
       <span class="skill-tag">Executive Administration</span>
       <span class="skill-tag">CRM Management</span>
@@ -1644,7 +1646,6 @@ footer p {
 <div class="section-outer" id="recommendations">
   <div class="section-sidelabel"><span>Reviews</span></div>
   <div class="section-inner">
-
     <div class="rec-intro rv">
       <div>
         <div class="sec-tag">Client Reviews</div>
@@ -1652,27 +1653,17 @@ footer p {
       </div>
       <p class="rec-intro-sub">Kind words from the people I've had the privilege of working with.</p>
     </div>
-
     <div class="rec-grid">
-
-      <!-- Review 1 — Tracy French -->
       <div class="rec-card rv">
         <span class="rec-quote-mark">"</span>
         <div class="rec-stars">
-          <span class="rec-star">★</span>
-          <span class="rec-star">★</span>
-          <span class="rec-star">★</span>
-          <span class="rec-star">★</span>
-          <span class="rec-star">★</span>
+          <span class="rec-star">★</span><span class="rec-star">★</span>
+          <span class="rec-star">★</span><span class="rec-star">★</span><span class="rec-star">★</span>
         </div>
-        <p class="rec-text">
-          We are very happy with Kristine! She is responsive, dependable, and consistently delivers excellent work. We truly value the support she brings to our team.
-        </p>
+        <p class="rec-text">We are very happy with Kristine! She is responsive, dependable, and consistently delivers excellent work. We truly value the support she brings to our team.</p>
         <div class="rec-divider"></div>
         <div class="rec-author">
-          <div class="rec-avatar">
-            <span class="rec-avatar-initials">TF</span>
-          </div>
+          <div class="rec-avatar"><span class="rec-avatar-initials">TF</span></div>
           <div class="rec-author-info">
             <div class="rec-name">Tracy French</div>
             <div class="rec-role">Business Owner</div>
@@ -1680,25 +1671,16 @@ footer p {
           <span class="rec-company-badge">Unique Genius</span>
         </div>
       </div>
-
-      <!-- Review 2 — Mary Anne Pujalte -->
       <div class="rec-card rv d1">
         <span class="rec-quote-mark">"</span>
         <div class="rec-stars">
-          <span class="rec-star">★</span>
-          <span class="rec-star">★</span>
-          <span class="rec-star">★</span>
-          <span class="rec-star">★</span>
-          <span class="rec-star">★</span>
+          <span class="rec-star">★</span><span class="rec-star">★</span>
+          <span class="rec-star">★</span><span class="rec-star">★</span><span class="rec-star">★</span>
         </div>
-        <p class="rec-text">
-          Kristine stood out from the beginning being the first among her teammates to successfully close a sale. Her quick learning, adaptability, and commitment to excellence have truly impressed us. She continues to exceed expectations and shows incredible promise for even greater achievements ahead.
-        </p>
+        <p class="rec-text">Kristine stood out from the beginning being the first among her teammates to successfully close a sale. Her quick learning, adaptability, and commitment to excellence have truly impressed us. She continues to exceed expectations and shows incredible promise for even greater achievements ahead.</p>
         <div class="rec-divider"></div>
         <div class="rec-author">
-          <div class="rec-avatar">
-            <span class="rec-avatar-initials">MP</span>
-          </div>
+          <div class="rec-avatar"><span class="rec-avatar-initials">MP</span></div>
           <div class="rec-author-info">
             <div class="rec-name">Mary Anne Pujalte</div>
             <div class="rec-role">Operations Manager</div>
@@ -1706,7 +1688,6 @@ footer p {
           <span class="rec-company-badge">ArtCorp</span>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -1740,7 +1721,9 @@ footer p {
           <span class="ctc-val" style="cursor:default;color:var(--rust);">Open — Full-time & Part-time</span>
         </div>
       </div>
+      <!-- Send a Message — prominent button -->
       <a href="mailto:va.kristinegentolia@gmail.com" class="ctc-btn">
+        <i class="fa-solid fa-paper-plane" style="font-size:14px;"></i>
         Send a Message
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
           <path d="M1 7.5h13M8.5 2l5 5.5-5 5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1764,7 +1747,6 @@ footer p {
 /* HAMBURGER MENU */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
-
 function openMenu() {
   hamburger.classList.add('open');
   mobileMenu.classList.add('open');
@@ -1777,17 +1759,12 @@ function closeMenu() {
   mobileMenu.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
 }
-
 hamburger.addEventListener('click', () => {
   hamburger.classList.contains('open') ? closeMenu() : openMenu();
 });
-
-// Close on link click
 document.querySelectorAll('.mm-link').forEach(link => {
   link.addEventListener('click', closeMenu);
 });
-
-// Close on outside click
 mobileMenu.addEventListener('click', e => {
   if (e.target === mobileMenu) closeMenu();
 });
@@ -1856,6 +1833,5 @@ const secObs = new IntersectionObserver(entries => {
 }, { threshold: 0.4 });
 document.querySelectorAll('section[id], div[id]').forEach(s => secObs.observe(s));
 </script>
-
 </body>
 </html>
